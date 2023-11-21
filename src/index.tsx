@@ -52,12 +52,6 @@ export type Source = {
     cache?: Cache
 }
 
-export interface OnLoadStartEvent {
-    nativeEvent: {
-        cachePath: string | null
-    }
-}
-
 export interface OnLoadEvent {
     nativeEvent: {
         width: number
@@ -92,7 +86,7 @@ export interface FastImageProps extends AccessibilityProps, ViewProps {
     resizeMode?: ResizeMode
     fallback?: boolean
 
-    onLoadStart?(event: OnLoadStartEvent): void
+    onLoadStart?(): void
 
     onProgress?(event: OnProgressEvent): void
 
